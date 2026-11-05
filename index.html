@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rota Brasil</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- MENU -->
+    <header>
+        <nav>
+
+            <h1>🌴 Rota Brasil</h1>
+
+            <ul>
+                <li><a href="#inicio"> Início</a></li>
+                <li><a href="#regioes"> Regiões</a></li>
+                <li><a href="#pontos"> Pontos Turísticos</a></li>
+                <li><a href="#sobre"> Sobre</a></li>
+                <li><a href="#contato"> Avaliação</a></li>
+            </ul>
+
+            <input
+                type="text"
+                id="pesquisa"
+                placeholder="Pesquisar destino..."
+                onkeyup="pesquisarDestino()"
+            >
+
+        </nav>
+    </header>
+
+
+    <!-- INÍCIO -->
+    <section id="inicio" class="hero">
+
+        <div class="hero-text">
+
+            <h2>Explore, Viaje e Viva! </h2>
+
+            <p>
+                Explore destinos, conheça os pontos turísticos mais famosos e incríveis
+                de todas as regiões do nosso país.
+            </p>
+
+            <button onclick="irParaRegioes()">
+                Explore as regiões ↓
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- REGIÕES -->
+    <section id="regioes" class="regioes">
+
+        <h2>Regiões do Brasil</h2>
+
+        <div class="botoes-regioes">
+
+            <button onclick="filtrarRegiao('Norte')">
+                 Norte
+            </button>
+
+            <button onclick="filtrarRegiao('Nordeste')">
+                 Nordeste
+            </button>
+
+            <button onclick="filtrarRegiao('Centro-Oeste')">
+                 Centro-Oeste
+            </button>
+
+            <button onclick="filtrarRegiao('Sudeste')">
+                 Sudeste
+            </button>
+
+            <button onclick="filtrarRegiao('Sul')">
+                 Sul
+            </button>
+
+            <button onclick="mostrarTodos()">
+                 Todos
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PONTOS TURÍSTICOS -->
+    <section id="pontos" class="pontos">
+
+        <h2> Pontos Turísticos por Região </h2>
+
+        <div class="cards">
+
+
+            <!-- NORTE -->
+
+            <div class="card" data-regiao="Norte">
+
+                <img
+                    src="https://hweb-upload.s3-sa-east-1.amazonaws.com/5873d325c19a4207cc40b87c/35464b3be0044f5a8a689a425b5247a6.jpg"
+                    alt="Encontro das Águas">
+
+                <div class="card-conteudo">
+
+                    <span class="regiao norte">
+                        Região Norte
+                    </span>
+
+                    <h3>Encontro das Águas</h3>
+
+                    <p class="localizacao">
+                        📍 Manaus - AM
+                    </p>
+
+                    <p>
+                        O Encontro das Águas, localizado em Manaus, é um impressionante fenômeno natural amazônico onde os rios Negro e Solimões correm lado a lado sem se misturar. Essa linha visível de separação desperta a curiosidade de locais e turistas do mundo todo, devido às características tão distintas de suas águas.
+                    </p>
+
+                    <button onclick="abrirMapa('Encontro das Águas, Manaus, Amazonas')">
+                        📍 Ver no mapa
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="card" data-regiao="Norte">
+
+                <img
+                    src="https://i.pinimg.com/originals/a4/a8/b4/a4a8b4a2f9e33fed49bd93f331beeb92.jpg"
+                    alt="Teatro Amazonas">
+
+                <div class="card-conteudo">
+
+                    <span class="regiao norte">
+                        Região Norte
+                    </span>
+
+                    <h3>Teatro Amazonas</h3>
+
+                    <p class="localizacao">
+                        📍 Manaus - AM
+                    </p>
+
+                    <p>
+                        Inaugurado em 1896 no Largo de São Sebastião para atender aos desejos da elite da época, o Teatro Amazonas é o principal cartão-postal de Manaus e um dos mais belos teatros do mundo. Representando o apogeu da cidade durante o ciclo da borracha por ser uma obra singular no Brasil, o local foi reconhecido como Patrimônio Mundial pela UNESCO em 2026.
+                    </p>
+
+                    <button onclick="abrirMapa('Teatro Amazonas, Manaus, Amazonas')">
+                        📍 Ver no mapa
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="card" data-regiao="Norte">
+
+                <img
+                    src="https://estaticos.globoradio.globo.com/fotos/2019/05/8078f5fb-1204-4400-ba3a-7923f2cf12e8.jpg.640x360_q75_box-0%2C0%2C800%2C450_crop_detail.jpg" alt="Mercado Ver-o-Peso">
+
+                <div class="card-conteudo">
+
+                    <span class="regiao norte">
+                        Região Norte
+                    </span>
+
+                    <h3>Mercado Ver-o-Peso</h3>
+
+                    <p class="localizacao">
+                        📍 Belém - PA
+                    </p>
+
+                    <p>
+                        O Mercado Ver-o-Peso, localizado às margens da Baía do Guajará, é um histórico ponto de encontro cultural e afetivo, famoso por suas ervas, cheiros, peixes e culinária típica, onde famílias e amigos se reúnem para compartilhar momentos e conversas especiais. 
+                    </p>
+
+                    <button onclick="abrirMapa('Mercado Ver-o-Peso, Belém, PA')">
+                        📍 Ver no mapa
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="card" data-regiao="Norte">
+
+                <img
+                    src="https://tse4.mm.bing.net/th/id/OIP.o9LCtPnF-aKGVbGMcXGPHQHaE7?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="Parque do Jalapão">
+
+                <div class="card-conteudo">
+
+                    <span class="regiao norte">
+                        Região Norte
+                    </span>
+
+                    <h3>Parque do Jalapão</h3>
+
+                    <p class="localizacao">
+                        📍 Mateiros - TO
+                    </p>
+
+                    <p>
+                        Principal atração turística do Tocantins, o Jalapão ganhou destaque ao servir de cenário para produções como o reality show *Survivor: Tocantins* e a novela *O Outro Lado do Paraíso*. A região destaca-se pela produção sustentável de artesanato em capim dourado e seda de buriti, que representa a principal fonte de renda e sustentabilidade para as comunidades locais.
+                    </p>
+
+                    <button onclick="abrirMapa('Parque do Jalapão, Mateiros, TO')">
+                        📍 Ver no mapa
+                    </button>
+
+                </div>
+
+            </div>
+
+                <div class="card" data-regiao="Norte">
+
+                <img
+                    src="https://tse1.mm.bing.net/th/id/OIP.X6omjdTnois1PAMgcEuLRgHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="Alter do Chão ">
+
+                <div class="card-conteudo">
+
+                    <span class="regiao norte">
+                        Região Norte
+                    </span>
+
+                    <h3>Alter do Chão</h3>
+
+                    <p class="localizacao">
+                        📍 Santarém - PA
+                    </p>
+
+                    <p>
+                        Localizado a cerca de 37 quilômetros de Santarém (PA), às margens do Rio Tapajós, o distrito de Alter do Chão é o principal ponto turístico da região e ficou conhecido como o "Caribe Brasileiro" após ser eleito pelo jornal britânico *The Guardian* como a praia de água doce mais bonita do mundo.
+                    </p>
+
+                    <button onclick="abrirMapa('Alter do Chão, Santarém, PA')">
+                        📍 Ver no mapa
+                    </button>
+
+                </div>
+            
+            </div>
+
+
+            <!-- NORDESTE -->
+
+            <div class="card" data-regiao="Nordeste">
+
+                <img
+                    src="https://tse4.mm.bing.net/th/id/OIP.pf0fZW-CBZ7d1Iy1zwoSEAHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="Porto de Galinhas">
+
+                <div class="card-conteudo">
+
+                    <span class="regiao nordeste">
+                        Região nordeste</span>
+
+                    <h3>Porto de Galinhas</h3>
+
+                    <p class="localizacao">
+                        📍 Ipojuca - PE
+                    </p>
+
+                    <p>
+                        Porto de Galinhas é um destino que combina a beleza natural das praias com a rica cultura e história da região. Para quem visita, é essencial conhecer as principais atrações e atividades disponíveis como: piscinas naturais, as diversas praias, passeios de jangada, mergulhos. Porto de galinha é famoso pela sua culinária e a variedade de hospedagens que podem ser aproveitadas.
+                    </p>
+
+                    <button onclick="abrirMapa('Porto de Galinhas')">
+                        📍 Ver no mapa
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="card" data-regiao="Nordeste">
+
+                <img
+                    src="https://th.bing.com/th/id/OIP.NYXzpCH241Asryk827Ei-gHaEZ?w=276&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+                    alt="Pelourinho">
+
+                <div class="card-conteudo">
+
+                    <span class="regiao nordeste">
+                        Região Nordeste
+                    </span>
+
+                    <h3>Pelourinho</h3>
+
+                    <p class="localizacao">
+                        📍 Salvador - BA
+                    </p>
+
+                    <p>
+                        O Pelourinho, em Salvador, carrega uma história complexa marcada pelo contraste entre a opressão colonial e a resistência cultural do povo baiano. Muito além de suas fachadas coloridas, sua trajetória de lutas, celebração e resiliência o consagrou como Patrimônio Mundial da UNESCO e símbolo vivo da diversidade brasileira.
+                    </p>
+
+                    <button onclick="abrirMapa('Pelourinho, Salvador, Bahia')">
+                        📍 Ver no mapa
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="card" data-regiao="Nordeste">
+
+                <img
+                    src="https://tse4.mm.bing.net/th/id/OIP.u8pdfRMPoONzPB8AxTJZfQHaE7?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="Jericoacoara">
+
+                <div class="card-conteudo">
+
+                    <span class="regiao nordeste">
+                        Região Nordeste
+                    </span>
+
+                    <h3>Jericoacoara</h3>
+
+                    <p class="localizacao">
+                        📍 Jijoca de Jericoacoara - CE
+                    </p>
+
+                    <p>
+                        A Vila de Jericoacoara, carinhosamente conhecida como "Jeri", é um encantador destino à beira-mar no litoral do Ceará, ideal para relaxar e explorar a natureza. O local se destaca por suas praias, dunas douradas e lagoas de águas cristalinas formadas pelas chuvas, que podem ser facilmente exploradas em passeios pelos lados leste e oeste da vila.
+                    </p>
+
+                    <button onclick="abrirMapa('Jericoacoara, Ceará')">
+                        📍 Ver no mapa
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="card" data-regiao="Nordeste">
+
+                <img
+                    src="https://th.bing.com/th/id/OIP.l56UhT62FOnTlRilFi2QtAAAAA?w=132&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+                    alt="Lençóis Maranhenses">
+
+                <div class="card-conteudo">
+
+                    <span class="regiao nordeste">
+                        Região Nordeste
+                    </span>
+
+                    <h3>Lençóis Maranhenses</h3>
+
+                    <p class="localizacao">
+                        📍 Barreirinhas - MA
+                    </p>
+
+                    <p>
+                        Os Lençóis Maranhenses, localizados no estado do Maranhão, formam um paraíso natural único no Brasil que atrai visitantes de todo o mundo. Com suas imensas dunas e lagoas cristalinas, o destino oferece uma experiência inesquecível, sendo a escolha perfeita para os amantes da natureza que buscam aventura nas férias.
+                    </p>
+
+                    <button onclick="abrirMapa('Lençóis Maranhenses, Barreirinhas, Maranhão')">
+                        📍 Ver no mapa
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="card" data-regiao="Nordeste">
+
+                <img
+                    src="https://th.bing.com/th/id/OIP.n-g_NT3o4_5ABXF0A22lBAHaHa?w=161&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+                    alt="Praia dos Carneiros">
+
+                <div class="card-conteudo">
+
+                    <span class="regiao nordeste">
+                        Região Nordeste
+                    </span>
+
+                    <h3>Praia dos Carneiros</h3>
+
+                    <p class="localizacao">
+                        📍 Tamandaré - PE
+                    </p>
+
+                    <p>
+                        A paradisíaca Praia dos Carneiros, no litoral pernambucano, é um dos destinos mais deslumbrantes do Nordeste e destaca-se por sua emblemática Capela de São Benedito. Construída em 1910 à beira-mar, a igrejinha adiciona um charme histórico único à paisagem local.
+                    </p>
+
+                    <button onclick="abrirMapa('Praia dos Carneiros, Tamandaré, PE')">
+                        📍 Ver no mapa
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- CENTRO-OESTE -->
+
+            <div class="card" data-regiao="Centro-Oeste">
+
+                <img
+                    src="https://th.bing.com/th/id/OIP.xV_NyEFmbQ13bzy9wqn9wAHaEI?w=308&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+                    alt="Chapada dos Veadeiros">
+
+                <div class="card-conteudo">
+
+                    <span class="regiao centro">
+                        Centro-Oeste
+                    </span>
+
+                    <h3>Chapada dos Veadeiros</h3>
+
+                    <p class="localizacao">
+                        📍 Alto Paraíso de Goiás - GO
+                    </p>
+
+                    <p>
+                        Localizada em Goiás, a cerca de 220 km de Brasília, a Chapada dos Veadeiros é um dos principais destinos de ecoturismo do Centro-Oeste, reconhecida como Patrimônio Natural da Humanidade pela UNESCO. Ideal para quem ama a natureza e busca aventura, o local se destaca por suas trilhas extensas, impressionantes formações rochosas e cachoeiras de águas cristalinas.
+                    </p>
+
+                    <button onclick="abrirMapa('Chapada dos Veadeiros, Alto Paraíso de Goiás')">
+                        📍 Ver no mapa
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="card" data-regiao="Centro-Oeste">
+
+                <img
+                    src="https://th.bing.com/th/id/OIP.3JgZYcr5x16TNyXTUPTR-AHaEK?w=271&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+                    alt="Pantanal">
+
+                <div class="card-conteudo">
+
+                    <span class="regiao centro">
+                        Centro-Oeste
+                    </span>
+
+                    <h3>Pantanal</h3>
+
+                    <p class="localizacao">
+                        📍 MT - MS
+                    </p>
+
+                    <p>
+                        Destaque do turismo no Centro-Oeste, o Pantanal é a maior planície alagada do planeta e abriga uma das maiores biodiversidades do mundo. O destino oferece experiências como passeios de barco e safáris fotográficos, permitindo a observação de animais como onças-pintadas, jacarés, capivaras, araras e tuiuiús.
+                    </p>
+
+                    <button onclick="abrirMapa('Pantanal, MT')">
+                        📍 Ver no mapa
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="card" data-regiao="Centro-Oeste">
+
+                <img
+                    src="data:image/webp;base64,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"
+                    alt="Catedral de Brasília">
+
+                <div class="card-conteudo">
+
+                    <span class="regiao centro">
+                        Centro-Oeste
+                    </span>
+
+                    <h3>Catedral de Brasília</h3>
+
+                    <p class="localizacao">
+                        📍 Brasília - DF
+                    </p>
+
+                    <p>
+                        Inaugurada em 1970 na Esplanada dos Ministérios, a Catedral Metropolitana de Brasília é uma obra marcante do arquiteto Oscar Niemeyer, reconhecida por suas linhas ousadas e acústica intrigante. Seu projeto destaca-se pelas 16 colunas curvas que simbolizam mãos em oração e pelos vitrais coloridos de Marianne Peretti, que filtram a luz solar para criar uma experiência sensorial única.
+                    </p>
+
+                    <button onclick="abrirMapa('Catedral Metropolitana de Brasília')">
+                        📍 Ver no mapa
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="card" data-regiao="Centro-Oeste">
+
+                <img
+                    src="https://th.bing.com/th/id/OIP.K5A3YcvS1OfQYbfB8cSeZQHaEo?w=286&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+                    alt="Pirénopolis">
+
+                <div class="card-conteudo">
+
+                    <span class="regiao centro">
+                        Centro-Oeste
+                    </span>
+
+                    <h3>Pirenópolis</h3>
+
+                    <p class="localizacao">
+                        📍 Pirénopolis - GO
+                    </p>
+
+                    <p>
+                       Situada a cerca de 120 km de Goiânia e 150 km de Brasília, Pirenópolis carinhosamente chamada de "Piri" é um importante destino turístico em Goiás, famoso por sua arquitetura colonial portuguesa, belezas naturais e rica tradição cultural. O município encanta os visitantes com suas marcantes cachoeiras no cerrado e com eventos emblemáticos como as Cavalhadas, realizadas durante a tradicional Festa do Divino Espírito Santo.
+                    </p>
+
+                    <button onclick="abrirMapa('Pirenópolis, GO')">
+                        📍 Ver no mapa
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="card" data-regiao="Centro-Oeste">
+
+                <img
+                    src="https://th.bing.com/th/id/OIP.U-RdV3D18SOSH2nHsYOm4wHaEa?w=259&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+                    alt="Hot Park">
+
+                <div class="card-conteudo">
+
+                    <span class="regiao centro">
+                        Centro-Oeste
+                    </span>
+
+                    <h3>Hot Park</h3>
+
+                    <p class="localizacao">
+                        📍 Rio Quente - GO
+                    </p>
+
+                    <p>
+                        O Hot Park é a principal atração turística de Rio Quente e um dos maiores parques aquáticos do Brasil, contando com mais de 30 atrações espalhadas por 200 mil m². Seu grande diferencial são as águas termais e naturais aquecidas entre 36°C e 42°C, permitindo desfrutar de toboáguas e piscinas de ondas com conforto e relaxamento até nos dias mais frios.
+                    </p>   
+                    <button onclick="abrirMapa('Hot Park, Rio Quente, GO')">
+                        📍 Ver no mapa
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- SUDESTE -->
+
+            <div class="card" data-regiao="Sudeste">
+
+                <img
+                    src="https://th.bing.com/th/id/OIP.xRrX4o7OJFwQ5g8cy3zAogHaKy?w=132&h=190&c=7&r=0&o=7&pid=1.7&rm=3"
+                    alt="Cristo Redentor">
+
+                <div class="card-conteudo">
+
+                    <span class="regiao sudeste">
+                        Região Sudeste
+                    </span>
+
+                    <h3>Cristo Redentor</h3>
+
+                    <p class="localizacao">
+                        📍 Rio de Janeiro - RJ
+                    </p>
+
+                    <p>
+                        Eleito uma das Sete Maravilhas do Mundo Moderno e localizado no topo do Rio de Janeiro, o Cristo Redentor é um símbolo de acolhimento brasileiro que une história, fé, arte e natureza. Visitar o monumento proporciona uma experiência emocionante, revelando uma deslumbrante vista panorâmica da cidade que contempla a praia de Copacabana, a Lagoa Rodrigo de Freitas, o Pão de Açúcar e o Oceano Atlântico.
+                    </p>
+
+                    <button onclick="abrirMapa('Cristo Redentor, Rio de Janeiro')">
+                        📍 Ver no mapa
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="card" data-regiao="Sudeste">
+
+                <img
+                    src="https://th.bing.com/th/id/OIP.-h0pARhJj2MayGdBKPKMDgHaEr?w=238&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+                    alt="Ouro Preto">
+
+                <div class="card-conteudo">
+
+                    <span class="regiao sudeste">
+                        Região Sudeste
+                    </span>
+
+                    <h3>Ouro Preto</h3>
+
+                    <p class="localizacao">
+                        📍 Ouro Preto - MG
+                    </p>
+
+                    <p>
+                        Caminhar por Ouro Preto é como vivenciar a história em uma atmosfera única onde o passado e o presente se encontram em perfeita harmonia. Suas ladeiras de pedra pé-de-moleque revelam casarões coloniais, museus fascinantes, igrejas barrocas enriquecidas pela genialidade de Aleijadinho e a irresistível culinária mineira, unindo a riqueza do período colonial à energia vibrante de uma cidade universitária rodeada por belas montanhas.
+                    </p>
+
+                    <button onclick="abrirMapa('Ouro Preto, Minas Gerais')">
+                        📍 Ver no mapa
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="card" data-regiao="Sudeste">
+
+                <img
+                    src="https://th.bing.com/th/id/OIP.wufUNshQRcCdimJZ-8TLawHaE7?w=239&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+                    alt="Avenida Paulista">
+
+                <div class="card-conteudo">
+
+                    <span class="regiao sudeste">
+                        Região Sudeste
+                    </span>
+
+                    <h3>Avenida Paulista</h3>
+
+                    <p class="localizacao">
+                        📍 São Paulo - SP
+                    </p>
+
+                    <p>
+                        A Avenida Paulista é um dos destinos mais visitados de São Paulo, reunindo cultura, arte, gastronomia, compras e lazer com excelente mobilidade. Com atrações para todos os públicos, a avenida transforma sua dinâmica ao longo do dia, oferecendo passeios culturais tranquilos pela manhã, museus e cafés movimentados à tarde e uma vibrante vida noturna com restaurantes, bares e cinemas.
+                    </p>
+
+                    <button onclick="abrirMapa('Avenida Paulista, SP')">
+                        📍 Ver no mapa
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="card" data-regiao="Sudeste">
+
+                <img
+                    src="https://th.bing.com/th/id/OIP.uFzKvhwW8FuwKEMJKjbXBAHaLH?w=132&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+                    alt="Campos do Jordão">
+
+                <div class="card-conteudo">
+
+                    <span class="regiao sudeste">
+                        Região Sudeste
+                    </span>
+
+                    <h3>Campos do Jordão</h3>
+
+                    <p class="localizacao">
+                        📍 Serra da Mantiqueira - SP
+                    </p>
+
+                    <p>
+                        Conhecida como a "Suíça Brasileira", Campos do Jordão combina o clima de montanha da Serra da Mantiqueira com uma encantadora arquitetura em estilo europeu, gastronomia de excelência e paisagens inesquecíveis. O destino oferece desde a charmosa Vila Capivari, famosa por seus bistrôs, chocolates caseiros e fondues até passeios de contemplação da natureza entre araucárias no Horto Florestal, no Parque Amantikir e em seus mirantes panorâmicos.
+                    </p>
+
+                    <button onclick="abrirMapa('Campos do Jordão, SP')">
+                        📍 Ver no mapa
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="card" data-regiao="Sudeste">
+
+                <img
+                    src="https://th.bing.com/th/id/OIP.owdheurxjeWpXYhYpKhgOwHaEK?w=296&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+                    alt="Convento da Penha">
+
+                <div class="card-conteudo">
+
+                    <span class="regiao sudeste">
+                        Região Sudeste
+                    </span>
+
+                    <h3>Convento da Penha</h3>
+
+                    <p class="localizacao">
+                        📍 Vila Velha - ES
+                    </p>
+
+                    <p>
+                        O Convento da Penha, localizado no alto de um penhasco em Vila Velha, Espírito Santo, é um importante santuário mariano e um dos principais pontos turísticos do estado. Fundado em 1558 pelo frei espanhol Pedro Palácios, abriga uma das igrejas mais antigas do Brasil e foi tombado como Patrimônio Histórico pelo IPHAN em 1943.
+                    </p>
+
+                    <button onclick="abrirMapa('Convento da Penha, Vila Velha, ES')">
+                        📍 Ver no mapa
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- SUL -->
+
+            <div class="card" data-regiao="Sul">
+
+                <img
+                    src="https://th.bing.com/th/id/OIP.WXMXvoam0YuwKQpWTqhtowHaEx?w=261&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+                    alt="Beto Carrero World">
+
+                <div class="card-conteudo">
+
+                    <span class="regiao sul">
+                        Região Sul
+                    </span>
+
+                    <h3>Beto Carrero</h3>
+
+                    <p class="localizacao">
+                        📍 Penha - SC
+                    </p>
+
+                    <p>
+                    Localizado em Penha, Santa Catarina, o Beto Carrero World é o maior parque temático da América Latina e um dos destinos de entretenimento mais completos do Brasil. Ideal para todas as idades, o parque combina brinquedos de alta adrenalina, como a montanha-russa invertida Fire Whip, com áreas temáticas imersivas como Hot Wheels, NERF Mania e Madagascar, além de espetáculos ao vivo de nível internacional e encontros com personagens icônicos.
+                    </p>
+
+                    <button onclick="abrirMapa('Beto Carrero World, Penha, SC')">
+                        📍 Ver no mapa
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="card" data-regiao="Sul">
+
+                <img
+                    src="https://th.bing.com/th/id/OIP.l2STjifd5Hqh2HJ3ZOyQwAHaE0?w=266&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+                    alt="Gramado">
+
+                <div class="card-conteudo">
+
+                    <span class="regiao sul">
+                        Região Sul
+                    </span>
+
+                    <h3>Gramado</h3>
+
+                    <p class="localizacao">
+                        📍 Gramado - RS
+                    </p>
+
+                    <p>
+                        Gramado, situada na Serra Gaúcha, é um dos destinos mais charmosos do Brasil, famosa por sua arquitetura de influência europeia, clima frio e ruas floridas, como a movimentada Avenida Borges de Medeiros. O destino combina uma atmosfera acolhedora que lembra vilarejos alpinos com uma gastronomia marcante, destacando-se pelos chocolates caseiros, fondues artesanais e o tradicional café colonial, oferecendo conforto, segurança e charme a todos os visitantes.
+                    </p>
+
+                    <button onclick="abrirMapa('Gramado, Rio Grande do Sul')">
+                        📍 Ver no mapa
+                    </button>
+
+                </div>
+
+            </div>
+
+        <div class="card" data-regiao="Sul">
+
+                <img
+                    src="https://th.bing.com/th/id/OIP.YGaNxLkZmkoTCzij9sXmYgHaE8?w=368&h=201&c=7&r=0&o=7&pid=1.7&rm=3"
+                    alt="Cataratas do Iguaçu">
+
+                <div class="card-conteudo">
+
+                    <span class="regiao sul">
+                        Região Sul
+                    </span>
+
+                    <h3>Cataratas do Iguaçu</h3>
+
+                    <p class="localizacao">
+                        📍 Foz do Iguaçu - PR
+                    </p>
+
+                    <p>
+                        Localizadas na Tríplice Fronteira entre Brasil, Argentina e Paraguai, as Cataratas do Iguaçu oferecem um espetáculo grandioso no Parque Nacional do Iguaçu, destacando-se por centenas de saltos de água cercados pela Mata Atlântica e por cenários marcantes como a Garganta do Diabo. Em um ambiente cosmopolita e multicultural, Foz do Iguaçu combina essa maravilha natural a uma infraestrutura completa, complementada por atrações icônicas como o Parque das Aves e a Usina Hidrelétrica de Itaipu.
+                    </p>
+
+                    <button onclick="abrirMapa('Cataratas do Iguaçu, Foz do Iguaçu,')">
+                        📍 Ver no mapa
+                    </button>
+
+                </div>
+
+            </div>
+
+        <div class="card" data-regiao="Sul">
+
+                <img
+                    src="https://th.bing.com/th/id/OIP.DzHeZxquf9diEKsntV8lIAHaEK?w=299&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+                    alt="Balneário Camboriú">
+
+                <div class="card-conteudo">
+
+                    <span class="regiao sul">
+                        Região Sul
+                    </span>
+
+                    <h3>Balneário Camboriú</h3>
+
+                    <p class="localizacao">
+                        📍 Balneário Camboriú - SC
+                    </p>
+
+                    <p>
+                        Conhecida como a "Dubai brasileira" devido aos seus imponentes arranha-céus, Balneário Camboriú combina praias encantadoras, gastronomia diversa e atrações para todas as idades no sul do país.
+                    </p>
+
+                    <button onclick="abrirMapa('Balneário Camboriú, SC')">
+                        📍 Ver no mapa
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="card" data-regiao="Sul">
+
+                <img
+                    src="https://th.bing.com/th/id/OIP.oNzSmWiNLhAZkJ2HmEYOTgHaE8?w=213&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+                    alt="Jardim Botânico">
+
+                <div class="card-conteudo">
+
+                    <span class="regiao sul">
+                        Região Sul
+                    </span>
+
+                    <h3>Jardim Botânico</h3>
+
+                    <p class="localizacao">
+                        📍 Curitiba - PR
+                    </p>
+
+                    <p>
+                      O Jardim Botânico de Curitiba é um dos pontos turísticos mais icônicos do Paraná, destacando-se por seus jardins em estilo francês e por uma imponente estufa de vidro inspirada no Palácio de Cristal de Londres que abriga plantas da Mata Atlântica.
+                    </p>
+
+                    <button onclick="abrirMapa('Jardim Botânico, PR')">
+                        📍 Ver no mapa
+                    </button>
+
+                </div>
+
+            </div>
+
+
+    </section>
+
+
+    <!-- SOBRE -->
+
+    <section id="sobre" class="sobre">
+
+        <h2> Sobre o Rota Brasil</h2>
+
+        <p>
+        ,Simplifique suas viagens com o Rota Brasil. Descubra os principais pontos turísticos nacionais, viva novas experiências e crie memórias inesquecíveis.
+        </p>
+
+    </section>
+
+    <!-- AVALIAÇÃO -->
+     <section class="avaliacao">
+        <h2> O que você achou do nosso site? </h2>
+        <p>Sua opnião é muito importante para nós!</p>
+
+        <form id="FormAvaliacao">
+            <input type="text" id="nome" placeholder="Seu nome" required>
+
+            <textarea id="mensagem" placeholder="Escreva sua opnião..." required></textarea>
+            <button type="submit">Enviar Avaliação</button>
+        </form>
+        <p id="resposta"></p>
+     </section>
+
+
+    <!-- RODAPÉ -->
+
+    <footer id="contato">
+
+        <h2>🌴 Rota Brasil</h2>
+
+        <p>
+            Conheça o Brasil. Viva experiências inesquecíveis!
+        </p>
+
+        <p>
+            📧 rota@turismo.com
+        </p>
+
+        <p>
+            © 2026 Rota Turismo
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
